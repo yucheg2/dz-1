@@ -1,17 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";// для начала нужно импортировать React
+import { createRoot } from 'react-dom/client';//Импортировали библиотеку
+//библиотека, которая позволяет работать с деревом элементов в браузере
+// и монтирует в dom браузера наши react элементы
+import 'bootstrap/dist/css/bootstrap.css'//импортировали стили из библиотеки bootstrap
+const root = createRoot(document.querySelector('#root'))//задали корнейвой элемент
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const element = <h1>Hello world</h1>//jsx эквевалентна React.createElement( "h1", null, "Hello world" )
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+root.render(element)//отрендерили его внутрь рут
+
